@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="sslogo1.jpg" type="image/x-icon">
+    <title>SutterBug Sketch</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">SutterBug Sketch</div>
+            <div class="user-profile">
+                <i class="fas fa-user-circle"></i>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <aside class="toolbar">
+            <ul class="tools">
+                <li>
+                    <label for="brush-select">Brushes:</label>
+                    <select id="brush-select">
+                        <option value="pen">Pen</option>
+                        <option value="crayon">Crayon</option>
+                        <option value="pencil">Pencil</option>
+                        <option value="spray">Spray</option>
+                        <option value="paintbrush">Paint Brush</option>
+                        <option value="marker">Marker</option>
+                    </select>
+                </li>
+                <li>
+                    <label for="line-width">Brush Width:</label>
+                    <input type="range" id="line-width" min="1" max="50" value="5" title="Line Width">
+                </li>
+                <li><button id="eraser" title="Eraser"><i class="fas fa-eraser"></i> Eraser</button></li>
+                <li>
+                    <label for="color-picker">Color:</label>
+                    <input type="color" id="color-picker" value="#000000" title="Color Picker">
+                </li>
+                <li>
+                    <label for="bg-color"   >BG Color:</label>
+                    <input type="color" id="bg-color" value="#ffffff" title="Canvas Background Color">
+                </li>
+                <li class="action-buttons">
+                    <button id="undo" title="Undo"><i class="fas fa-undo"></i></button>
+                    <button id="redo" title="Redo"><i class="fas fa-redo"></i></button>
+                </li>
+                <li class="action-buttons">
+                    <button id="new" title="New Sketch"><i class="fas fa-file"></i></button>
+                    <button id="clear" title="Clear Canvas"><i class="fas fa-trash"></i></button>
+                </li>
+                <li class="action-buttons">
+                    <button id="save" title="Save Sketch"><i class="fas fa-save"></i></button>
+                    <button id="download" title="Download Sketch"><i class="fas fa-download"></i></button>
+                </li>
+            </ul>
+        </aside>
+
+        <!-- Drawing Board --> 
+
+        <div class="canvas-container">
+            <canvas id="drawing-board"></canvas>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

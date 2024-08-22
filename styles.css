@@ -1,0 +1,271 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Foldit:wght@500&family=Montserrat:ital,wght@1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Bubbles&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner:wght@400..700&display=swap');
+@font-face {
+    font-family: 'cryptoHunter';
+    src: url('fonts/crypto-hunter/cryptoHunter.ttf') format('truetype');
+}
+
+
+:root {
+    --primary-color: #4A90E2;
+    --secondary-color: #50C878;
+    --accent-color: #FFD700;
+    --background-color: #F0F4F8;
+    --text-color: #333333;
+    --white: #FFFFFF;
+    --toolbar-width: 250px;
+    --transition-speed: 0.3s;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Edu VIC WA NT Beginner', sans-serif;
+    background-color: var(--background-color);
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    color: var(--text-color);
+}
+
+header {
+    /* background-color: var(--primary-color); */
+    background: linear-gradient(180deg, #1c1c48, #232374, #555598, #706fd3);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    transition: all var(--transition-speed) ease;
+}
+
+header:hover {
+    background-color: #5A9FE2;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: 'Rubik Bubbles', cursive;
+    font-size: 2rem;
+    background: linear-gradient(45deg, #FFD700, #FF8C00, #FF4500, #DC143C );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    transition: all var(--transition-speed) ease;
+}
+
+
+
+.user-profile {
+    font-size: 1.8rem;
+    color: var(--white);
+    cursor: pointer;
+    transition: all var(--transition-speed) ease;
+}
+
+
+main {
+    display: flex;
+    flex-grow: 1;
+    overflow: hidden;
+}
+
+.toolbar {
+    width: var(--toolbar-width);
+    background-color: var(--white);
+    padding: 1.5rem;
+    overflow-y: auto;
+    border-right: 1px solid #e0e0e0;
+    transition: all var(--transition-speed) ease;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.toolbar:hover {
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.tools {
+    list-style-type: none;
+}
+
+.tools li {
+    margin-bottom: 1.5rem;
+}
+
+.tools li label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+#brush-select, #line-width {
+    width: 100%;
+    padding: 0.7rem;
+    border: 2px solid var(--primary-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all var(--transition-speed) ease;
+}
+
+#color-picker, #bg-color{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: end;
+    width: 25%;
+    padding: 0.7rem;
+    border: 2px solid var(--primary-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all var(--transition-speed) ease;
+}
+
+
+#brush-select:focus, #color-picker:focus, #line-width:focus, #bg-color:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.3);
+}
+
+#brush-select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%234A90E2' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.7rem top 50%;
+    background-size: 1.2rem auto;
+    font-family: "Edu VIC WA NT Beginner", sans-serif;
+}
+
+#eraser{
+    font-family: "Edu VIC WA NT Beginner", sans-serif;
+}
+
+.tools li button {
+    width: 100%;
+    background: var(--white);
+    border: 2px solid var(--primary-color);
+    font-size: 1rem;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: all var(--transition-speed) ease;
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    text-align: left;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.tools li button:hover, .tools li button.active {
+    color: var(--white);
+    background-color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.tools li button i {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition-speed) ease;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.action-buttons button {
+    flex: 1;
+    justify-content: center;
+}
+
+.canvas-container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    background-color: #E8F0F8;
+    transition: all var(--transition-speed) ease;
+}
+
+.canvas-container:hover {
+    background-color: #F0F6FC;
+}
+
+ 
+
+#drawing-board {
+    background-color: #ffffff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border:solid 2px var(--primary-color);
+    border-radius: 8px;
+    transition: all var(--transition-speed) ease;
+}
+
+#drawing-board:hover {
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes toolPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.tools li button:active {
+    animation: toolPulse 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+    }
+
+    .toolbar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #e0e0e0;
+    }
+
+    .tools {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .tools li {
+        width: 48%;
+    }
+}
+
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--background-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary-color);
+}
